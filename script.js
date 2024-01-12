@@ -7,10 +7,27 @@ const snake = [
     { x: 270, y: 240 }
 ]
 
+const randomNumber = (min, max) => {
+    return Math.round(Math.random() * (max - min) + min)
+}
+
+const randomPosition = () => {
+    const number = randomNumber(0, canvas.width - size)
+    return Math.round(number / 30) * 30
+}
+
+const randomColor = () => {
+    const red = randomNumber(0, 255)
+    const green = randomNumber(0, 255)
+    const blue = randomNumber(0, 255)
+
+    return `rgb(${red}, ${green}, ${blue})`
+}
+
 const food = {
-    x: 90,
-    y: 90,
-    color: "red"
+    x: randomPosition(),
+    y: randomPosition(),
+    color: randomColor(),
 }
 
 let direction, loopId
@@ -75,6 +92,14 @@ const drawGrid = () => {
     }
 }
 
+const checkEat = () => {
+    const head = snake[snake.length - 1]
+
+    if(head.x == food.x && head.y == food.y){
+        snake.push(head)
+    }
+}
+
 const gameLoop = () => {
     clearInterval(loopId)
 
@@ -83,6 +108,7 @@ const gameLoop = () => {
     drawFood()
     moveSnake()
     drawSnake()
+    checkEat()
 
     loopId = setTimeout(() => {
         gameLoop()
@@ -91,17 +117,17 @@ const gameLoop = () => {
 
 gameLoop()
 
-document.addEventListener("keydown", ({key}) => {
-    if(key = "ArrowRight" && direction != "left"){
+document.addEventListener("keydown", ({ key }) => {
+    if(key == "ArrowRight" && direction != "left"){
         direction = "right"
     }
-    if(key = "ArrowLeft" && direction != "right"){
+    if(key == "ArrowLeft" && direction != "right"){
         direction = "left"
     }
-    if(key = "ArrowDown" && direction != "up"){
+    if(key == "ArrowDown" && direction != "up"){
         direction = "down"
     }
-    if(key = "ArrowUp" && direction != "down"){
+    if(key == "ArrowUp" && direction != "down"){
         direction = "up"
     }
 })
