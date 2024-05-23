@@ -1,21 +1,21 @@
-# 📄 JavaScript em execução: snake game
-Este script JavaScript é um jogo de snake implementado em um elemento <canvas>, onde o usuário controla uma cobra para comer alimentos e ganhar pontos. O jogo inclui funcionalidades como pontuação, recorde máximo, tela de menu e efeitos sonoros, enquanto desafia o jogador a evitar colisões com as paredes do canvas e com seu próprio corpo.
+# 📄 JavaScript running: snake game
+This JavaScript script is a snake game implemented in a <canvas> element, where the user controls a snake to eat food and earn points. The game includes features such as score, high score, menu screen and sound effects, while challenging the player to avoid collisions with the walls of the canvas and their own body.
 
-## :link: Ambiente de desenvolvimento
+## :link: Development environment
 1. JavaScript
 ```
 v18.18.0
 ```
-2. Visual Stduo Code
+2. Visual Studio Code
 ```
 1.89.1
 ```
 
-## :link: Objetivo e descrição
-O script JavaScript apresenta a estrutura e funcionalidades de um jogo da cobrinha (snake) implementado em um elemento <canvas>, proporcionando uma experiência interativa ao usuário. Inicia-se com a configuração do canvas e do contexto 2D para desenho gráfico, além da seleção de elementos HTML relevantes, como a pontuação, a pontuação máxima, a pontuação final, a tela de menu e o botão de jogar. Também são incluídos efeitos sonoros por meio de um novo elemento de áudio.
+## :link: Purpose and description
+The JavaScript script presents the structure and functionalities of a snake game implemented in a <canvas> element, providing an interactive experience for the user. It starts with configuring the canvas and 2D context for graphic design, in addition to selecting relevant HTML elements, such as the score, the maximum score, the final score, the menu screen and the play button. Sound effects are also included through a new audio element.
 
-O jogo é configurado com parâmetros como o tamanho do quadrado e a posição inicial da cobra, representada por um array que armazena as coordenadas X e Y. O aumento da pontuação é gerenciado pela função incrementScore(), enquanto a função updateHighScore() atualiza o recorde máximo alcançado. A função gameOver() é acionada quando ocorre uma colisão, atualizando o recorde e exibindo a tela de menu.
+The game is configured with parameters such as the size of the square and the initial position of the snake, represented by an array that stores the X and Y coordinates. The increase in score is managed by the incrementScore() function, while the updateHighScore() function updates the maximum record achieved. The gameOver() function is triggered when a collision occurs, updating the record and displaying the menu screen.
 
-O script utiliza funções auxiliares para gerar números aleatórios para a posição e cor dos alimentos, bem como para verificar colisões e movimentar a cobra. Um grid é desenhado no canvas para melhorar a visualização do jogo. O loop principal (gameLoop()) controla as atualizações de cena e movimentos da cobra, enquanto os eventos de teclado permitem ao jogador controlar a direção da cobra.
+The script uses helper functions to generate random numbers for the position and color of the food, as well as to check for collisions and move the snake. A grid is drawn on the canvas to improve game visualization. The main loop (gameLoop()) controls scene updates and snake movements, while keyboard events allow the player to control the snake's direction.
 
-Ao clicar no botão de jogar, o jogo é reiniciado, zerando a pontuação e ocultando a tela de menu. Esses elementos combinados criam uma experiência de jogo envolvente e interativa dentro do navegador.
+When you click the play button, the game restarts, resetting the score and hiding the menu screen. These elements combined create an immersive and interactive gaming experience within the browser.
